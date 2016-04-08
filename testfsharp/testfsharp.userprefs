@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="testfsharp/Presentation.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="testfsharp/Program.cs">
+    <Files>
+      <File FileName="testfsharp/Program.cs" Line="11" Column="1" />
+      <File FileName="Persistence/Database.cs" Line="29" Column="29" />
+      <File FileName="FSharpLogic/Component1.fs" Line="2" Column="1" />
+      <File FileName="Interfaces/Interfaces.cs" Line="7" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
