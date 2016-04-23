@@ -8,7 +8,7 @@ namespace Persistence
 	public class Logic
 	{
 		public string GetUserHtml() {
-			var users = new Database ().GetUsers ();
+			var users = new Database().GetMovements();
 			return users.Aggregate("<ul>", (ret, user)=> ret + UserHelpers.MakeLI(user)) + "</ul>";
 		}
 	}
@@ -27,16 +27,42 @@ namespace Persistence
         }
 		public List<Movement> GetMovements() {
 			return new List<Movement> {
-				new Movement{Id=1,Name="steve"},
-				new Movement{Id=2,Name="jim"},
-				new Movement{Id=3,Name="bob"},
-				new Movement{Id=4,Name="sally"}
+				new Movement{Id=1,
+					Name="pay back Steve", 
+					ApplyToParty=ApplyToParty.Counterparty, 
+					MovementType= MovementType.Deliver
+				},
+				new Movement{Id=2,Name="Bill pays me",
+					ApplyToParty=ApplyToParty.Counterparty, 
+					MovementType= MovementType.Deliver
+				},
+				new Movement{Id=3,Name="Bob owes Sally",
+					ApplyToParty=ApplyToParty.Counterparty, 
+					MovementType= MovementType.Deliver
+				},
+				new Movement{Id=4,Name="Sally paid Bill",
+					ApplyToParty=ApplyToParty.Counterparty, 
+					MovementType= MovementType.Deliver
+				}
+			};
+		}
+		public List<User> GetUsers() {
+			return new List<User> {
+				new User{Id=1,Name="steve"},
+				new User{Id=2,Name="jim"},
+				new User{Id=3,Name="bob"},
+				new User{Id=4,Name="sally"}
 			};
 		}
 	}
-	public class Movement : IIdentity {
+	public class Movement : IMovement,IIdentity {
+		public int Id { get; set; }
+		public string Name { get; set; }
+		public MovementType MovementType {get;set;}
+		public ApplyToParty ApplyToParty {get;set;}
+	}
+	public class User : IIdentity {
 		public int Id { get; set; }
 		public string Name { get; set; }
 	}
 }
-
