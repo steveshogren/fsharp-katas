@@ -1,5 +1,5 @@
 ﻿using System;
-using Persistence;
+using FSharpLogic;
 
 namespace testfsharp
 {
@@ -7,8 +7,6 @@ namespace testfsharp
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Hello World!");
-			Console.WriteLine (String.Join(",", new Logic().GetUserHtml()));
 		}
 	}
 }
