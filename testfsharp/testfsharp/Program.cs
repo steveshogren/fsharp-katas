@@ -7,7 +7,9 @@ namespace testfsharp
 	{
 		public static void Main (string[] args)
 		{
-			new SpiralMatrix ().runTests ();
+			new HasCycle ().runTests ();
+			//new SpiralMatrix ().runTests ();
+			//new AddNumbers ().runTests ();
 			//UserHelpers.testReverse ();
 		}
 	}
