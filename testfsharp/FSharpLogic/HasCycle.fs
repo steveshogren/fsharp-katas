@@ -8,7 +8,17 @@ type Node<'a> (v:'a, next:Node<'a> option) =
 
 type HasCycle () = 
 
-    let hasCycle l = true
+    let hasCycle (l:Node<'a>) = 
+        let rec iHasCycle (f:Node<'a> option) (s:Node<'a> option) =
+            match (f,s) with
+            | None, next -> false
+            | Some fast, Some slow -> 
+                if fast = slow then true
+                else match fast.next with 
+                     | None -> false
+                     | Some next -> iHasCycle next.next slow.next
+           
+        iHasCycle l.next (Some l)
 
     member t.runTests () = 
         let l1 = Node(1, Some (Node(2, None)))
