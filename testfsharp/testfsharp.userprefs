@@ -1,11 +1,10 @@
 ﻿<Properties StartupItem="testfsharp/Presentation.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Persistence/Database.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FSharpLogic/LevelTraversal.fs">
     <Files>
-      <File FileName="testfsharp/Program.cs" Line="11" Column="17" />
-      <File FileName="Persistence/Database.cs" Line="19" Column="5" />
-      <File FileName="Interfaces/Interfaces.cs" Line="7" Column="3" />
-      <File FileName="FSharpLogic/UserHelpers.fs" Line="1" Column="1" />
+      <File FileName="testfsharp/Program.cs" Line="18" Column="1" />
+      <File FileName="FSharpLogic/UserHelpers.fs" Line="36" Column="1" />
+      <File FileName="FSharpLogic/LevelTraversal.fs" Line="10" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

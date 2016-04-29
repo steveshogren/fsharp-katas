@@ -17,6 +17,7 @@ type HasCycle () =
                 else match fast.next with 
                      | None -> false
                      | Some next -> iHasCycle next.next slow.next
+            | _, _ -> false
            
         iHasCycle l.next (Some l)
 
