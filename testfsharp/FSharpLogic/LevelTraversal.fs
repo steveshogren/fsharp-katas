@@ -5,6 +5,8 @@ open NUnit.Framework
 
 type TNode<'a> (v:'a, left:TNode<'a> option, right:TNode<'a> option) =
     new (v:'a) = TNode(v, None, None)
+    new (v:'a, l:'a, r:'a) = TNode(v, Some(TNode(l)), Some(TNode(r)))
+    new (v:'a, l:TNode<'a>, r:TNode<'a>) = TNode(v, Some(l), Some(r))
 
     member val value = v with get, set
     member val left = left with get, set
@@ -66,15 +68,15 @@ module Tree =
 type LevelTraversal () = 
     [<Test>]
     member t.runTests () = 
-        let l1 = TNode(3, Some (TNode(9)), 
-                         Some (TNode(20, Some(TNode(15)),
-                                          Some(TNode(7)))))
+        let l1 = TNode(3, TNode(9, Some(TNode 0), None),
+                          TNode(20, 15, 7))
+        Assert.AreEqual([3;9;0;20;15;7], Tree.inOrder(l1))
 
-        let l2 = TNode(3, Some (TNode(9, Some(TNode(0)), None)),
-                         Some (TNode(20, Some(TNode(15)),
-                                          Some(TNode(7)))))
-        Assert.AreEqual([3;9;0;20;15;7], Tree.inOrder(l2))
-        Assert.AreEqual([[3];[9;20];[15;7]], Tree.levels(l1))
+        let l1 = TNode(3, TNode(9), 
+                          TNode(20, TNode(15,6,4), TNode 7))
+        Assert.AreEqual([[3];[9;20];[15;7];[6;4]], Tree.levels(l1))
 //        Assert.AreEqual(l1, (Tree.makeTree ["3";"9";"20";"#";"#";"15";"7";"#";"#";"#";"#"]))
         //Assert.AreEqual(["3";"9";"20";"#";"#";"15";"7";"#";"#";"#";"#"], Tree.group(l1))
+        let l1 = TNode(3, TNode(9), 
+                          TNode(20, 15, 7))
         Assert.AreEqual("3920##157####", Tree.printFold(l1))
