@@ -2,6 +2,14 @@
 
 namespace Interfaces
 {
+	public class Test {
+		public void test(Func<DateTime> a) {
+			throw new AggregateException();
+		}
+		public void tet2() {
+			test (() => DateTime.Now);
+		}
+	}
 	public enum MovementType
 	{
 		Undefined = 0,
