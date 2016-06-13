@@ -32,7 +32,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Database.cs" />
+    <Compile Include="DatabaseNinject.cs" />
+    <Compile Include="DatabaseCtorManual.cs" />
+    <Compile Include="DatabaseNinjectKernel.cs" />
+    <Compile Include="DatabaseFn.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
