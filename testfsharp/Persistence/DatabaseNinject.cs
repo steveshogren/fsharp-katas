@@ -7,7 +7,7 @@ namespace Persistence
 {
 	// Pros: compiler safe
 	//       control memory usage
-	// Cons: Dynamic
+	// Cons: test/production mixed
 	//       wordy
 	//       breaks compiler
 	//       test-only interfaces

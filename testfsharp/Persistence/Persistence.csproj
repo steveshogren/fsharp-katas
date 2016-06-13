@@ -36,6 +36,7 @@
     <Compile Include="DatabaseCtorManual.cs" />
     <Compile Include="DatabaseNinjectKernel.cs" />
     <Compile Include="DatabaseFn.cs" />
+    <Compile Include="Helpers.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
