@@ -5,12 +5,15 @@ using Interfaces;
 
 namespace Persistence
 {
-	// Pros: compiler safe
-	//       control memory usage
-	// Cons: test/production mixed
-	//       wordy
-	//       breaks compiler
+	// Pros:
+  //       best control of memory usage
+	// Cons:
+  //       test/production mixed
+	//       more boilerplate
+	//       highly dynamic == weird runtime issues
 	//       test-only interfaces
+	//       injects hundreds more functions than necessary
+	//       Moq or Rhino mocks
 	public class AgreementRepositoryNinject {
 		private AgreementORM AgreementORM;
 		private Logging Logging;

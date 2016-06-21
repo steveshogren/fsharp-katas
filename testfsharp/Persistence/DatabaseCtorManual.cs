@@ -6,11 +6,13 @@ using Interfaces;
 namespace Persistence
 {
 
-	// Pros: compiler safe
-	//       explicit
+	// Pros: compiler correctness checking preserved
+	//       dependency wiring in-line
 	// Cons: test/production mixed
-	//       very wordy
+	//       boilerplate
 	//       test-only interfaces
+	//       injects hundreds more functions than necessary
+	//       Moq or Rhino mocks
 	public class AgreementRepository {
 		private AgreementORM AgreementORM;
 		private Logging Logging;

@@ -5,14 +5,15 @@ using Interfaces;
 
 namespace Persistence
 {
-	// Pros: Small
-	//       implicit
-	//       test-only code separated
-	//       control memory usage
-	// Cons: Dynamic
+	// Pros:
+  //       low boilerplate
+	//       best control of memory usage
+	// Cons:
+	//       highly dynamic == weird runtime issues
 	//       kernel everywhere
 	//       breaks compiler
 	//       test-only interfaces
+	//       Moq or Rhino mocks
 	public class AgreementRepositoryNinjectKernel {
 		//[Inject]
 		internal IKernel kernel;
