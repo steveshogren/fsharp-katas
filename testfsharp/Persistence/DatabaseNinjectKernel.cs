@@ -11,7 +11,6 @@ namespace Persistence
 	// Cons:
 	//       highly dynamic == weird runtime issues
 	//       kernel everywhere
-	//       breaks compiler
 	//       test-only interfaces
 	//       Moq or Rhino mocks
 	public class AgreementRepositoryNinjectKernel {

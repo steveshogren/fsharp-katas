@@ -8,7 +8,6 @@ namespace Persistence
 	// Pros:
   //       best control of memory usage
 	// Cons:
-  //       test/production mixed
 	//       more boilerplate
 	//       highly dynamic == weird runtime issues
 	//       test-only interfaces
