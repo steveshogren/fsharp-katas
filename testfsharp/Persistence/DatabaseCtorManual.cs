@@ -7,21 +7,19 @@ namespace Persistence
 {
 
 	// Pros:
-  //       compiler correctness checking preserved
-	//       dependency wiring in-line
+	//       local dependency wiring
 	// Cons:
-  //       test/production mixed
 	//       boilerplate
-	//       test-only interfaces
+	//       test-only interfaces don't express intent
 	//       injects hundreds more functions than necessary
 	//       Moq or Rhino mocks
 	public class AgreementRepository {
-		private AgreementORM AgreementORM;
-		private Logging Logging;
+		private IAgreementORM AgreementORM;
+		private ILogging Logging;
 
 		public AgreementRepository() :this(new AgreementORM(), new Logging()){ }
 
-		public AgreementRepository(AgreementORM a, Logging l) {
+		public AgreementRepository(IAgreementORM a, ILogging l) {
 			this.AgreementORM = a;
 			this.Logging = l;
 		}
