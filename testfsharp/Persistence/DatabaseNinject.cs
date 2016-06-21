@@ -7,12 +7,14 @@ namespace Persistence
 {
 	// Pros:
   //       best control of memory usage
+  //       easily mock at all levels
 	// Cons:
-	//       boilerplate
+	//       medium boilerplate
 	//       highly dynamic == weird runtime issues
 	//       test-only interfaces don't express intent
-	//       injects hundreds more functions than necessary
+	//       injects more functions than necessary
 	//       Moq or Rhino mocks
+  //       easier to ignore design principles around coordination
 	public class AgreementRepositoryNinject {
 		private IAgreementORM AgreementORM;
 		private ILogging Logging;
@@ -45,6 +47,3 @@ namespace Persistence
   }
 }
 
-// Recommendations:
-// - Always bind using transient scope
-// - Put all bind methods in a CLASSNAME_BIND class next to the class, not in a "project-level" class

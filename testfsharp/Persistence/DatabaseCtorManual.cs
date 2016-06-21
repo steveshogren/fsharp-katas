@@ -11,7 +11,7 @@ namespace Persistence
 	// Cons:
 	//       boilerplate
 	//       test-only interfaces don't express intent
-	//       injects hundreds more functions than necessary
+	//       injects more functions than necessary
 	//       Moq or Rhino mocks
 	public class AgreementRepository {
 		private IAgreementORM AgreementORM;
